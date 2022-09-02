@@ -1,0 +1,190 @@
+$breakpoints: (
+  mobile: 700px,
+  tablet: 1024px,
+  laptop: 1300px,
+  desktop-lg: 1800px
+);
+
+@mixin breakpoint($breakpoint, $direction) {
+
+  // Get the breakpoint value.
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+  
+  @if $direction == min {
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+} 
+  // MOBILE
+// header
+.header{
+  @include breakpoint(mobile,min ){
+    background-color: white;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+
+    box-shadow: 0px 1px 5px -3px rgba(0,0,0,0.99);
+
+    &__logo{
+      width: 40%;
+    }
+    &__menu{
+      display: none;
+    }
+    &__nav{
+      width: 50%;
+      display: flex;
+      position: relative;
+      
+      height: 50px;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+
+      .links{
+        flex-direction: row;
+        justify-content:space-between;
+        align-items: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.hero{
+  @include breakpoint(mobile,min ){
+    height: 100vh;
+    padding-top: 7rem;
+    &__image{
+      max-width: 55%;
+    }
+  }
+}
+.main{
+  @include breakpoint(mobile,min ){
+    margin-block: 10rem;
+    gap: 10rem;
+
+
+    .feed{
+      gap: 8rem;
+      &__img{
+        max-width: 60%;
+      }
+    }
+    .access{
+      gap: 8rem;
+      &__img{
+        max-width: 50%;
+      }
+    }
+  }
+}
+
+// tablet
+.header{
+  @include breakpoint(tablet,min ){
+
+    &__nav{
+      width: 60%;
+
+      .links{
+        justify-content: end;
+        gap: 2.5rem;
+      }
+    }
+  }
+}
+.hero{
+  @include breakpoint(tablet,min ){
+    flex-direction: row-reverse;
+    &__content{
+
+      .title{
+        font-size: 4.5rem;
+      }
+    }
+  }
+}
+.main{
+  @include breakpoint(tablet,min ){
+    padding-block: 10rem;
+    margin: 0;
+    gap: 15rem;
+
+    .feed{
+      flex-direction: row-reverse;
+      &__img{
+        max-width: 40%;
+      }
+    }
+    .access{
+      flex-direction: row;
+      &__img{
+        max-width: 40%;
+      }
+    }
+
+
+    &__sign{
+      .container{
+        height: 90vh;
+        flex-direction: row;
+
+        .contenido{
+
+          .title{
+            font-size: 4rem;
+            padding-bottom: 4rem;
+          }
+
+          .options{
+            gap: 4rem;
+          }
+        }
+
+        .formulario{
+          gap: 3rem;
+        }
+        
+      }
+    }
+  }
+}
+
+// Desktop
+.header{
+  @include breakpoint(laptop,min ){
+    padding-inline: 16%;
+
+    &__sign{
+      padding-inline: 16%;
+
+    }
+  }
+}
+.footer{
+  @include breakpoint(laptop,min ){
+    margin-top: 0;
+
+    .container{
+      display: grid;
+      .footer__info{
+        grid-column: 1 / 2;
+      }
+      .footer__nav{
+        margin: 0;
+        grid-column: 2 / 3;
+        
+      }
+    }
+  }
+}
+
+
+
+

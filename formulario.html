@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body class="body__sign">
+  <header class="header__sign">
+    <a href="#" class="header__logo">
+      <img src="assets/svg/Logo.svg" alt="">
+    </a>
+    <a href="index.html" class="back">
+      <img src="assets/svg/Back Arrow.svg" alt="">
+    </a>
+  </header>
+  <main class="main__sign">
+    <div class="container">
+      <section class="contenido">
+        <h1 class="title">Create your personalized feed.</h1>
+        <div class="options">
+          <div class="option">
+            <i class="fa-solid fa-comments-dollar"></i>
+            <p class="paragraph">
+              <span class="bold">Over 20 Resources</span>
+              With resources ranging from Reddit to 
+              IndieHackers,we got all your needs covered.
+            </p>
+          </div>
+          <div class="option">
+            <i class="fa-solid fa-newspaper"></i>
+            <p class="paragraph">
+              <span class="bold">Delivered weekly</span>
+              Every week at exactly Tuesday 12:00 P.M.EST -expect
+              a value-packed digest rigth in your email.
+            </p>
+          </div>
+          <div class="option">
+            <i class="fa-solid fa-sun"></i>
+            <p class="paragraph">
+              <span class="bold">Unlimited ideas</span>
+              With resources ranging from Reddit to 
+              IndieHackers,we got all your needs covered.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <form action="#" class="formulario" id="formulario">
+        <h2 class="subtitle">Create your IndieBrew Account</h2>
+        <div class="input">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="jhon@example.com">
+          <small>Valor</small>
+        </div>
+        <div class="input">
+          <label for="name">Fullname</label>
+          <input type="text" id="name" placeholder="Jhon Doe">
+          <small>Valor</small>
+        </div>
+        <div class="input">
+          <label for="password">Password</label>
+          <input type="password" 
+            id="password"
+            placeholder="At least 8 characters"
+          >
+          <small>Valor</small>
+        </div>
+        <div class="input-check">
+          <input type="checkbox">
+          <p>By creating an account on IndieBrew,you agree to the
+            <a href="#">Terms & Conditions.</a>
+          </p>
+        </div>
+        <button  class="cta" type="submit" id="btnCreate">Create an Account</button>
+      </form>
+    </div>
+  </main>
+  
+</body>
+<script src="assets/js/formulario.js"></script>
+</html>

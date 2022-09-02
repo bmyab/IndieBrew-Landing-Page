@@ -1,0 +1,96 @@
+@use 'utils' as u;
+@use 'mixins' as m;
+
+@mixin btnBase (){
+  display: inline-block;
+  padding: 1.5rem;
+  color: white;
+  background-color: u.$color-btn-m;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  border: none;
+  border: 1px solid transparent;
+}
+@mixin btnBase-sm(){
+  @include btnBase();
+  font-size: 1.5rem;
+  padding:1rem;
+
+}
+
+
+.container{
+  max-inline-size: 130rem;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.cta{
+  @include btnBase();
+  font-weight: 500;
+
+  &-sm{
+    @include btnBase-sm();
+    &:hover{
+      border: 1px solid violet;
+      background-color: transparent;
+      color: u.$color-btn-m;;
+      span{
+        color: u.$color-btn-m;
+      }
+    }
+  }
+  span{
+    font-weight: 400;
+    color: #eee;
+  }
+  
+  &:hover{
+    border: 1px solid violet;
+    background-color: transparent;
+    color: u.$color-btn-m;;
+    span{
+      color: u.$color-btn-m;
+    }
+  }
+}
+
+.content{
+  max-inline-size: 52rem;
+  margin-inline: auto;
+  @include m.flex(column,1.5rem);
+  align-items: flex-start;
+
+  .subtitle{
+    font-size: 3.2rem;
+    color: u.$color-headings;
+  }
+  .cta-l{
+    text-decoration: none;
+    color:  u.$color-btn-m;
+    font-weight: 500;
+    transition: all 0.3s;
+
+    i{
+      font-size: 1.2rem;
+    }
+
+    &:hover{
+      letter-spacing:  1px;
+    }
+  }
+}
+
+.option{
+  @include m.flex(row,1rem);
+  align-items: flex-start;
+
+  .paragraph{
+    color: u.$color-headings;
+    .bold{
+      
+      font-weight: 600;
+      color: u.$color-headings;
+    }
+  }
+}
